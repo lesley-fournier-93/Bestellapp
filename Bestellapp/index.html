@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/Favicon/apple-touch-icon.png" />
+    <title>Bestell-App</title>
+    <link rel="stylesheet" href="./styles/style.importer.css" />
+  </head>
+  <body onload="init()">
+    <header id="header"></header>
+    <main id="ct-bestell-app">
+      <div class="ct-container">
+        <div class="content_wrapper">
+          <section class="content">
+            <div class="top">
+              <div id="cart-icon-none">
+                <a class="link" href="#headline-basket"><img id="cart-icon" src="./assets/icons/cart-icon.png" class="cart-icon" alt="Warenkorb" /></a>
+              </div>
+              <div id="restaurant-logo" class="restaurant-image">
+                <img src="./assets/Logo/restaurant-logo.png" alt="Namaste" />
+              </div>
+              
+                
+            </div>
+            <div class="restaurant-info">
+              <h2>Namaste - der Geschmack Indiens</h2>
+              <div class="evalutation">
+                <h4>Bewertung (4,2 von 5 Sternen)</h4>
+                <div class="stars">
+                  <img src="./assets/icons/star-filled.png" alt="Stern ausgefüllt" />
+                  <img src="./assets/icons/star-filled.png" alt="Stern ausgefüllt" />
+                  <img src="./assets/icons/star-filled.png" alt="Stern ausgefüllt" />
+                  <img src="./assets/icons/star-filled.png" alt="Stern ausgefüllt" />
+                  <img src="./assets/icons/star-unfilled.png" alt="Stern nicht ausgefüllt" />
+                </div>
+              </div>
+            </div>
+            <div class="meals">
+              <div class="arrow">
+                <img src="./assets/icons/pfeil.png" alt="Pfeil" />
+              </div>
+              <div class="dishes">
+              <div class="meals-inner">
+                <a class="link" href="#Beliebt">Beliebt</a>
+                <a class="link" href="#Salate">Salate</a>
+                <a class="link" href="#Suppen">Suppen</a>
+                <a class="link" href="#Vorspeisen">Vorspeisen</a>
+                <a class="link" href="#VegetarischeVorspeisen">Vegetarische Vorspeisen</a>
+                <a class="link" href="#Special">Special</a>
+                <a class="link" href="#Tandoori">Tandoori</a>
+                <a class="link" href="#ReisNudelgerichte">Reis- & Nudelgerichte</a>
+                <a class="link" href="#Currygerichte">Currygerichte</a>
+                <a class="link" href="#LammCurry">Lamm-Curry</a>
+                <a class="link" href="#IndischesBrot">Indisches Brot</a>
+                <a class="link" href="#Kindergerichte">Kindergerichte</a>
+                <a class="link" href="#alkoholischeGetränke">alkoholische Getränke</a>
+                <a class="link" href="#GetränkeOhneAlkohol">Getränke (ohne Alkohol)</a>
+              </div>
+                
+              </div>
+            </div>
+            <div top-2>
+              <img class="tandoori" src="./assets/img/tandoori.jpg" alt="tandoori" />
+            </div>
+            <div id="render-meals"></div>
+          </section>
+          <section class="basket_wrapper">
+            <div class="basket">
+              <h3 id="headline-basket">Warenkorb</h3>
+              <hr />
+              <br />
+              <div class="basket-content">
+                <div class="delivery-options">
+                  <h3>Lieferoptionen</h3>
+                  <label>
+                    <input type="radio" name="delivery-option" value="pickup" checked onclick="updateDeliveryOption()" />
+                    <div class="inline">Selbstabholung</div>
+                  </label>
+                  <br />
+                  <label>
+                    <input type="radio" name="delivery-option" value="delivery" onclick="updateDeliveryOption()" />
+                    <div class="inline">Lieferung (+5.00 €)</div>
+                  </label>
+                </div>
+                <div id="delivery-fields" style="display: none;">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" required />
+
+                  <label for="street">Straße:</label>
+                  <input type="text" id="street" required />
+
+                  <label for="postal-code">PLZ:</label>
+                  <input type="text" id="postal-code" required pattern="\d{5}" title="Bitte geben Sie eine gültige PLZ ein." />
+
+                  <label for="city">Ort:</label>
+                  <input type="text" id="city" required />
+                </div>
+                <div class="prices"></div>
+              </div>
+              <div class="basket-footer">
+                <div class="order">
+                  <button>Bestellen</button>
+                </div>
+              </div>
+              <div class="arrow-up" id="scroll-to-top">
+                <a href="#header-up"><img src="./assets/icons/arrow-up.png" alt="Pfeil nach oben" /></a>
+              </div>
+            </div>
+          </section>
+        </div>
+        
+        <div onclick="toggleOverlay()" id="overlay" class="overlay d-none">
+          <div onclick="event.stopPropagation()" id="" class="overlay-container">
+            <div>
+              <button onclick="toggleOverlay()" class="close-btn">&#x2715</button>
+            </div>
+            <div class="menu-points">
+              <h1>Mein Account</h1>
+              <div class="btn-overlay">
+                <button id="sign-in">Anmelden</button>
+                <button id="account">Account erstellen</button>
+              </div>
+              <div class="overlay-points">
+                <span class="points">
+                  <img src="./assets/icons/shopping-bag.png" alt="Warenkorb" class="icons" />Bestellungen
+                </span>
+                <span class="points">
+                  <img src="./assets/icons/herz.png" alt="Herz" class="icons" />Favoriten
+                </span>
+                <hr />
+                <span class="points">
+                  <img src="./assets/icons/presents.png" alt="Geschenk" class="icons" />Punkte
+                </span>
+                <span class="points">
+                  <img src="./assets/icons/discount.png" alt="%" class="icons" />Stempelkarten
+                </span>
+                <span class="points">
+                  <img src="./assets/icons/info.png" alt="Info-Button" class="icons" />Brauchst du Hilfe?
+                </span>
+                <span class="points">
+                  <img src="./assets/icons/karte.png" alt="Karte" class="icons" />Geschenkkarten
+                </span>
+                <hr />
+                <span class="points">
+                  <img src="./assets/icons/scooter.png" alt="Roller" class="icons" />Fahrer*in werden
+                </span>
+                <span class="points">
+                  <img src="./assets/icons/building.png" alt="Gebäude" class="icons" />Bestell-App for business
+                </span>
+                <span class="points">
+                  <img src="./assets/icons/store.png" alt="Shop" class="icons" />Partner werden
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+    </main>
+    <footer id="footer"></footer>
+  </body>
+  <script src="./scripts/overlay.js"></script>
+  <script src="./scripts/template.js"></script>
+  <script src="./scripts/objects.js"></script>
+  <script src="./script.js"></script>
+</html>

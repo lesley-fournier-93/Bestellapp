@@ -1,0 +1,600 @@
+/* Scrollbar styles */
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #ff8000;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #e67300;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+  background-color: rgb(255, 128, 0);
+  color: rgb(247, 233, 233);
+}
+
+header img {
+  width: 200px;
+  padding-block: 12px;
+  padding-left: 12px;
+}
+
+.ct-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 12px;
+}
+
+.ct-header a {
+  padding-right: 24px;
+}
+
+.hide {
+  display: none !important;
+}
+
+header .image {
+  align-self: center;
+  height: 100px;
+  cursor: pointer;
+}
+
+header nav a {
+  border-bottom: solid 4px transparent;
+}
+
+#burger-menu {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  padding: var(--sp-30) var(--sp-10);
+  row-gap: var(--sp-05);
+  z-index: 999;
+  align-items: end;
+  text-align: end;
+}
+
+/*main*/
+.content_wrapper {
+  gap: 2px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  position: relative;
+}
+.content {
+  width: calc(100% - 300px);
+}
+.top {
+  height: 220px;
+  width: 100%;
+  background-image: url("./assets/img/Indian-Cuisine.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-position: 30% 20%;
+}
+
+.top img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.restaurant-image {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: auto;
+  z-index: 10;
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  object-fit: contain;
+}
+
+.restaurant-info {
+  height: 110px;
+  color: black;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.restaurant-info h2 {
+  flex-wrap: wrap;
+}
+.restaurant-info h4 {
+  color: orange;
+  font-weight: lighter;
+}
+
+.evalutation {
+  display: flex;
+  align-items: center;
+  margin-top: -5px;
+  gap: 20px;
+}
+
+.stars {
+  display: flex;
+  margin-top: -25px;
+}
+.stars img {
+  width: 50px;
+  height: 50px;
+  display: flex;
+}
+
+.meals {
+  height: 80px;
+  background-color: #f7f6f1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.meals-inner {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+  scroll-padding-left: 20px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.arrow img {
+  height: 60px;
+  width: 60px;
+  margin-left: 10px;
+}
+
+.dishes {
+  gap: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+}
+
+.link {
+  color: #82848b;
+}
+
+.top-2 {
+  width: 100%;
+}
+.tandoori {
+  height: 220px;
+  width: 98%;
+  object-fit: cover;
+  margin-left: 20px;
+}
+
+.ct-meals h3 {
+  margin-left: 40px;
+  margin-top: 15px;
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 128, 0);
+  text-decoration-thickness: 3px;
+}
+
+.menu-class {
+  position: relative;
+  width: 98%;
+  border: 2px solid lightgrey;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding-top: 10px;
+  height: 140px;
+}
+
+.menu-class img {
+  height: 20px;
+  width: 20px;
+  margin-left: 83vw;
+  margin-top: 10px;
+}
+
+.menu-class-content {
+  margin-left: 20px;
+}
+
+.menu-class-content h4 {
+  font-size: 20px;
+}
+.description {
+  margin-top: -10px;
+}
+.price {
+  color: rgb(255, 128, 0);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.add-button {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+.add-meal-btn img {
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-meal-btn img {
+  width: 30px;
+  height: 30px;
+}
+.drinks {
+  margin-top: 15px;
+}
+/*footer*/
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  min-height: var(--footer-height);
+  background-color: rgb(255, 128, 0);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+#footer {
+  flex-shrink: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.ct-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.ct-footer img {
+  width: 100px;
+  height: 100px;
+}
+
+#cart-icon {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  filter: invert(1);
+}
+
+#cart-icon:hover {
+  transform: scale(1.8);
+}
+
+.dishes-container {
+  overflow: hidden;
+  padding: 0 20px;
+}
+.dishes {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #ff8000 #f1f1f1;
+  padding: 0 20px;
+  scroll-padding: 20px;
+  gap: 20px;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.dishes::before {
+  content: "";
+  flex-shrink: 0;
+  width: 20px;
+}
+
+.dishes::after {
+  content: "";
+  flex-shrink: 0;
+  width: 20px;
+}
+
+.spacer {
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.dishes::-webkit-scrollbar {
+  height: 10px;
+}
+
+.dishes::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dishes::-webkit-scrollbar-thumb {
+  background: #ff8000;
+}
+
+.dishes::-webkit-scrollbar-thumb:hover {
+  background: #e67300;
+}
+
+.link {
+  font-weight: bold;
+  font-size: 20px;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+  white-space: nowrap;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 35px;
+  margin-bottom: 30px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 2600px) {
+  dishes {
+    padding-left: 900px;
+  }
+}
+@media (max-width: 1600px) {
+  .restaurant-image img {
+    width: 85%;
+    height: 85%;
+    border: 2px soild #ffffff;
+    object-fit: contain;
+  }
+
+  .restaurant-info {
+    margin-top: 70px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 1299px) {
+  #cart-icon {
+    display: block;
+  }
+
+  .basket_wrapper {
+    border: none;
+    
+  }
+
+  .content {
+    width: 100%;
+  }
+  .tandoori {
+    width: 95%;
+  }
+  .basket-footer {
+    margin-left: 40px;
+  }
+  .order  {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+
+  .scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: all 0.3s ease;
+}
+
+.scroll-btn.center {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+}
+
+@media (max-width: 1050px) {
+  .menu-class {
+    width: 95%;
+  }
+}
+
+@media (max-width: 850px) {
+  .meals {
+    width: 95%;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn-overlay {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+
+   .restaurant-image img {
+    margin-left: 15px;
+  }
+
+  #sign-in {
+    padding: 5px;
+  }
+
+  #account {
+    padding: 5px;
+  }
+
+  .overlay-points {
+    margin-top: 70px;
+  }
+  #cart-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .tandoori {
+    margin-left: 0;
+    width: 100%;
+  }
+  .menu-class {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .dishes {
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .basket_wrapper {
+    margin-left: 0;
+  }
+  .basket.content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  #cart-icon {
+    right: 10px;
+    height: 50px;
+  }
+
+ 
+
+  .evalutation {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-class {
+    height: 160px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .ct-header img {
+    width: 150px;
+  }
+
+  header .image {
+    height: 80px;
+    padding-left: 5px;
+  }
+
+  .restaurant-info {
+    height: 200px;
+  }
+
+  .evalutation {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-class {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .menu-name {
+    font-size: 18px;
+    flex-wrap: wrap;
+  }
+
+  .order button {
+    width: 80%;
+  }
+
+  .basket-footer {
+    padding: 0;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+
+  #scroll-to-top {
+  position: absolute;      
+  bottom: 20px;             
+  transform: translateX(-50%); 
+  z-index: 1000;            
+}
+}
+@media (max-width: 1299px) {
+  #scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    left: auto;
+    transform: none;
+  }
+}
+
+@media (max-wdith: 350px) {
+  header .image {
+    width:0px;
+    height: 50px;
+    padding-block: 0px;
+    padding-left: 0px;
+  }
+  .menu-class {
+    margin-left: 5px;
+  }
+}
+
